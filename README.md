@@ -1,7 +1,7 @@
 # Online Chat
 
 ## Используемые технологии
--Create-React-App
+-Create-React-App /n
 -React
 -TypeScript/JS
 -Redux
