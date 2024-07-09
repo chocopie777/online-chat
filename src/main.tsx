@@ -5,6 +5,20 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { initializeApp } from "firebase/app";
+ 
+const firebaseConfig = {
+  apiKey: "AIzaSyChOePsyYXGcgap5m11Dag2S-yvLOaMnfs",
+  authDomain: "online-chat-ecf85.firebaseapp.com",
+  projectId: "online-chat-ecf85",
+  storageBucket: "online-chat-ecf85.appspot.com",
+  messagingSenderId: "115751600051",
+  appId: "1:115751600051:web:32ef4f957ca3c08682d5c6",
+  measurementId: "G-JRSSYQSJTS"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
