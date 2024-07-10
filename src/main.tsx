@@ -6,6 +6,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth';
  
 const firebaseConfig = {
   apiKey: "AIzaSyChOePsyYXGcgap5m11Dag2S-yvLOaMnfs",
@@ -17,8 +18,8 @@ const firebaseConfig = {
   measurementId: "G-JRSSYQSJTS"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
