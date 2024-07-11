@@ -1,18 +1,16 @@
-import { Box, Container } from "@mui/material"
-import { Authorization } from "./components/registration-authorization/authorization/Authorization"
-// import { Registration } from "./components/registration-authorization/registration/Registration"
+import {Box, Container} from "@mui/material"
 
 function App() {
 
-  return (
-    <>
-      <Container maxWidth='xl'>
-        <Box justifyContent='center'>
-          <Authorization />
-        </Box>
-      </Container>
-    </>
-  )
+    return (
+        <>
+            <Container maxWidth='xl'>
+                <Box justifyContent='center'>
+                    Главная
+                </Box>
+            </Container>
+        </>
+    )
 }
 
 export default App
