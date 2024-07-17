@@ -4,10 +4,12 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import {initializeApp} from "firebase/app";
-import {getAuth} from 'firebase/auth';
-import {RouterProvider} from "react-router-dom";
-import router from "../router.tsx";
+import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth';
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import { Authorization } from './components/registration-authorization/authorization/Authorization.tsx';
+import { Registration } from './components/registration-authorization/registration/Registration.tsx';
+import { Account } from './components/account/Account.tsx';
 
 const firebaseConfig = {
     apiKey: "AIzaSyChOePsyYXGcgap5m11Dag2S-yvLOaMnfs",
@@ -22,8 +24,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+//роутер тут ан е в отедельно файле, потому что хз как app через пропсы в роутер передать 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Navigate to={'/auth'} replace={true}/>,
+    },
+    {
+        path: "/auth",
+        element: <Authorization auth={auth}/>
+    },
+    {
+        path: "/reg",
+        element: <Registration auth={auth}/>
+    },
+    {
+        path: "/account",
+        element: <Account />
+    }
+]);
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <RouterProvider router={router}/>
+        <RouterProvider router={router} />
     </React.StrictMode>,
 )
